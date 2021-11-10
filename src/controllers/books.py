@@ -12,19 +12,19 @@ def index():
     return
 @app.route('/reducesizeimage')            
 def reducesizeimage():
-    #input parameters
+    #parametros de entrada
     Filename=request.args.get('namefile','Need the filename.')
     Filelen=request.args.get('lenfile','Need the filename.')
     largura_desejada = int(Filelen)
-    #open the image
+    #opende la imagen
     imagem = Image.open(Filename)
-    #calculation of new dimensions of image
+    #calculo dimensiones imagen
     largura_imagem = imagem.size[0]
     altura_imagem = imagem.size[1]
     percentual_largura = float(largura_desejada) / float(largura_imagem)
     altura_desejada = int((altura_imagem * percentual_largura))
     imagem = imagem.resize((largura_desejada, altura_desejada), Image.ANTIALIAS)
     outputFilename='imagem-{}x{}.png'.format(imagem.size[0], imagem.size[1])
-    #save the new image
+    #save nueva imagen
     imagem.save(outputFilename)
     return outputFilename

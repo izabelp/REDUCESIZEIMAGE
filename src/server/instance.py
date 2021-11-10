@@ -5,10 +5,10 @@ class Server():
         self.app = Flask(__name__)
         self.api = Api(self.app,
             version='0.1',
-            title='REDUCE SIZE IMAGE',
-            descrition='Reduces the size of an image file.'
-            'input parameters: name of the file.' 
-            'output parameters: name of the output file e codigo erro',
+            title='REDUCE TAMAÑO IMAGE',
+            descrition='Reduce el tamaño de un archivo imagen'
+            'parametro de entrada: nombre del archivo.' 
+            'parametro de salida: nombre del archivo de salida y el codigo 200 si no errores.',
             doc='/docs'
             )
     def run(self,):
