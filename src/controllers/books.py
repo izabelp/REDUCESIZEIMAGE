@@ -6,7 +6,7 @@ import sys
 from PIL import Image
 from flask import jsonify
 
-#http://127.0.0.1:5000/reducesizeimage?namefile=E:\appnotice\apiflaskreducesizeimage\marina.png&lenfile=120
+#http://izabelpimentel.com/reducesizeimage?namefile=E:\appnotice\apiflaskreducesizeimage\marina.png&lenfile=120
 
 app,api = server.app, server.api
 @app.route('/reducesizeimage')            
@@ -23,6 +23,7 @@ def reducesizeimage():
     largura_desejada = int(Filelen)
     #opende la imagen
     imagem = Image.open(Filename)
+    print(imagem)
     #calculo dimensiones imagen
     largura_imagem = imagem.size[0]
     altura_imagem = imagem.size[1]
